@@ -1,13 +1,23 @@
+function displayJoke(response){
+
+new Typewriter("#joke", {
+  strings: response.data.answwer,
+  autoStart: true,
+  delay: 1,
+  cursor: "",
+});
+}
+
 function genarateJoke(event) {
     event.preventDefault();
-    let jokeElement = ducoment.querySelector("#joke");
+    let apiKey = "d6973oc76fcf3c7at603c4b3a18b2464";
+    let prompt = "";
+    let context = "";
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-    new Typewriter("#joke", {
-      strings: "What do you call an alligator in a vest? An investigator!",
-      autoStart: true,
-      delay: 1,
-      cursor: "",
-    });
+    axios.get(apiUrl).then(displayJoke);
+
+    
     
 }
 
