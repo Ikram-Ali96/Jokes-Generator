@@ -7,16 +7,17 @@
     <title>Jokes Generator</title>
 </head>
 <body>
+    <div class="container">
     <header>
-    <h1>British Jokes Generator</h1>
+    <h1> AI British Jokes Generator</h1>
     </header>
     <main>
     <form action="">
         <input type="text" placeholder="Enter the topic of the joke you want" 
-            autofocus required />
-        <input type="submit"/>
+            autofocus required  class="instructions" />
+        <input type="submit" class="submit-button" />
     </form>
-    <div>
+    <div class="joke-container">
         How many Brexiteers does it take to change a light bulb?
         <br/>
         One to promise a brighter future and the rest to screw it up.
@@ -31,6 +32,7 @@
     and hosted on <a href="https://ai-british-jokes-generator.netlify.app/" 
     target="_blank">Netlify</a>.
 </footer>
+</div>
 <script src="src/script.js"></script>
 </body>
 </html>
