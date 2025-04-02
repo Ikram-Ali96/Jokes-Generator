@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css">
     <title>Jokes Generator</title>
 </head>
@@ -12,15 +13,12 @@
     <h1> AI British Jokes Generator</h1>
     </header>
     <main>
-    <form action="">
+    <form id="Joke-generator-form" >
         <input type="text" placeholder="Enter the topic of the joke you want" 
             autofocus required  class="instructions" />
         <input type="submit" class="submit-button" />
     </form>
-    <div class="joke-container">
-        How many Brexiteers does it take to change a light bulb?
-        <br/>
-        One to promise a brighter future and the rest to screw it up.
+    <div class="joke-container" id="joke">
     </div>
     </main>
 
