@@ -54,7 +54,7 @@ form {
     padding: 14px 24px;
     font-size: 16px;
 }
-.joke {
+.joke-hidden{
     font-size: 16px;
     background-color: white;
     padding: 20px;
@@ -65,7 +65,7 @@ form {
 .hidden {
     display: none;
 }
-.joke strong {
+.joke-hidden strong {
     color: #885df1;
 }
 footer{
