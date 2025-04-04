@@ -1,32 +1,28 @@
-function displayJoke(response){
 
-new Typewriter("#joke", {
-  strings: response.data.answwer,
-  autoStart: true,
-  delay: 1,
-  cursor: "",
-});
+function displayJoke(response) {
+  new Typewriter("#joke", {
+    strings: response.data.answer,
+    autoStart: true,
+    delay: 1,
+    cursor: "",
+  });
 }
+function generateJoke(event) {
+  event.preventDefault();
 
-function genarateJoke(event) {
-    event.preventDefault();
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "d6973oc76fcf3c7at603c4b3a18b2464";
+  let context =
+    "You are a Joke expert and love to write short jokes. You mission is to generate a 4 line joke in basic HTML and separate each line with a <br />. Make sure to follow the user instructions. Do not include a title to the Joke. Sign the poem with 'SheCodes AI' inside a <strong> element at the end of the poem and NOT at the beginning";
+  let prompt = `User instructions: Generate a British joke about ${instructionsInput.value}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-    let instructionsInput = document.querySelector("#user-instructions");
-    let apiKey = "d6973oc76fcf3c7at603c4b3a18b2464";
-    let prompt = `User instructions: Generate funny British jokes ${instructionsInput.value}`;
-    let context =
-    "You are a funny AI comedian that generates British jokes. You're mission is to generate 2-3 lines jokes in basic HTML and seperate each line with a <br/>. Make sure to follow the user instructions below. Do not include a title to the joke. Sign the joke with 'SheCodes AI' inside a <strong> element at the end of the joke and NOT at the beginning.";
-    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
-    
-    let jokeElement = document.querySelector("#joke"); 
-    jokeElement.classList.remove("hidden");
-    jokeElement.innerHTML = `Generating British joke about ${instructionsInput.value}`;
+  let jokeElement = document.querySelector("#joke");
+  jokeElement.classList.remove("hidden");
+  jokeElement.innerHTML = `<div class="generating">⏳ Generating a French poem about ${instructionsInput.value}</div>`;
 
-
-
-    axios.get(apiUrl).then(displayJoke);
-    
+  axios.get(apiURL).then(displayJoke);
 }
 
 let jokeFormElement = document.querySelector("#joke-generator-form");
-jokeFormElement.addEventListener("submit" , genarateJoke);
+jokeFormElement.addEventListener("submit", generateJoke); 

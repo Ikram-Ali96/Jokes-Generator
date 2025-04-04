@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css">
     <title>Jokes Generator</title>
 </head>
@@ -14,14 +14,16 @@
     <h1> AI British Jokes Generator</h1>
     </header>
     <main>
+    <div class="form-container">
     <form id="joke-generator-form" >
-        <input type="text" placeholder="Enter the topic British joke you like.." 
+        <input type="text" placeholder="Enter the topic of the joke you'd like.." 
             autofocus required autocomplete="off" 
             class="instructions" id="user-instructions" />
         <input type="submit" class="submit-button" />
     </form>
-    <div class="joke-container" id="joke">
+    <div class="joke-hidden" id="joke"></div>
     </div>
+    <div class="hint">i.e Weather, Food or Tea</div>
     </main>
 
 <footer>
